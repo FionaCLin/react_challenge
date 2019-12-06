@@ -1,0 +1,23 @@
+{
+  "name": "patient-record-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test:unit": "NODE_ENV=test && nodeunit test/unit",
+    "test:e2e": "NODE_ENV=test && nodeunit test/e2e",
+    "test": "npm run test:unit && npm run test:e2e"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "mongodb": "^3.3.5",
+    "mongoose": "^5.7.13",
+    "morgan": "~1.9.1",
+    "request": "^2.88.0"
+  }
+}
