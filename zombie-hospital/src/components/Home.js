@@ -4,10 +4,13 @@ import SeveritySelector from "./SeveritySelector";
 import HospitalsList from "./HospitalsList";
 
 export default class Home extends Component {
-  state = {
-    hospitals: [],
-    level: 0
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      hospitals: [],
+      level: 0
+    };
+  }
 
   handleChange = event => {
     this.setState(event, () => {});

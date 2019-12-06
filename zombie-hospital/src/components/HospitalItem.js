@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
-
-export default class HospitalItem extends Component {  
- 
+export default class HospitalItem extends Component {
   render() {
     return (
       <li
@@ -12,16 +10,16 @@ export default class HospitalItem extends Component {
       >
         <span>{this.props.item.name}</span>
 
-        <span >
+        <span>
           <div className="tooltip">
-          <span className="tooltiptext">Patients at waiting list</span>
-          <span className="badge waiting-people">
-            {this.props.item.waitingStatus.patientCount}
-          </span>
-          <span
-            className="badge material-icons waiting-people"
-            data-badge-caption="person"
-          ></span>
+            <span className="tooltiptext">Patients at waiting list</span>
+            <span className="badge waiting-people">
+              {this.props.item.waitingStatus.patientCount}
+            </span>
+            <span
+              className="badge material-icons waiting-people"
+              data-badge-caption="person"
+            ></span>
           </div>
 
           <div className="waiting">
@@ -35,5 +33,3 @@ export default class HospitalItem extends Component {
     );
   }
 }
-
-

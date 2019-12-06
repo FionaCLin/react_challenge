@@ -3,18 +3,30 @@ import Select, { components } from "react-select";
 import { getIllnesses } from "../api";
 
 export default class IllnessSelector extends Component {
-  state = {
-    options: [],
-    selectedOption: 0
-  };
+  _isMounted = false;
+  constructor(props) {
+    super(props);
+    this.state = {
+      options: [],
+      selectedOption: 0
+    };
+  }
+
   handleChange = selectedOption => {
     this.setState({ selectedOption }, () => {});
   };
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
+    this._isMounted = true;
     getIllnesses().then(options => {
-      this.setState({ options }, () => {});
+      if (this._isMounted) {
+        this.setState({ options }, () => {});
+      }
     });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
   render() {
     const { selectedOption } = this.state;

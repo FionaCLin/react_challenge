@@ -5,16 +5,20 @@ import Modal from "./Modal";
 import { addToWaitingList } from "../api";
 
 export default class HospitalsList extends Component {
-  state = {
-    show: false,
-    hospitals: [],
-    selectedHospital: null,
-    fullname: "",
-    phone: ""
-  };
+  _isMounted = false;
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+      hospitals: [],
+      selectedHospital: null,
+      fullname: "",
+      phone: ""
+    };
+  }
 
   showModal = i => {
-    this.setState({ error: null })
+    this.setState({ error: null });
     this.setState({ selectedHospital: i });
     this.setState({ show: true });
   };
@@ -51,15 +55,20 @@ export default class HospitalsList extends Component {
       .catch(err => this.setState({ error: `Action failed, try it later` }));
   };
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
+    this._isMounted = true;
     getHospitals().then(res => {
       let hospitals = res._embedded.hospitals;
-
-      this.setState({ hospitals }, () => {});
+      if (this._isMounted) {
+        this.setState({ hospitals }, () => {});
+      }
     });
   }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
   render() {
-  
     let hospitals = this.state.hospitals.map(x => {
       x.waitingStatus = x.waitingList.filter(
         e => e.levelOfPain === this.props.level
