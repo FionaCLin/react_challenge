@@ -1,0 +1,195 @@
+.App {
+  text-align: center;
+  background: #eeeeee;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #01c3fd9c;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.selector {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+/* selector.js */
+.select-illness {
+  padding: 8px;
+  min-width: 250px;
+  margin: auto;
+}
+.select-illness label{
+  display: flex;
+}
+
+/* .hospitalslist.js */
+.hospitals-list {
+  position: relative;
+  padding: 16px;
+  margin: auto;
+  background: #eeeeee9e;
+}
+
+.hospitals {
+  list-style-type: none;
+  text-align: left;
+}
+
+/* .hospitalsItem.js */
+.hospitals li {
+  display: flex;
+  flex: column wrap;
+  justify-content: space-between;
+  border: 1px;
+  background: white;
+  padding: 4px;
+  margin: 8px;
+  position: relative;
+}
+
+.hospitals li .waiting-people {
+  padding: 0 8px 0 0;
+  min-width: 0rem;
+  margin-left: 0;
+}
+.waiting {
+  color: #808080;
+  font-size: small;
+  float: right;
+}
+
+.waiting .mins {
+  color: #ff8080;
+  font-size: small;
+  padding: 0 4px;
+  margin: 0 4px;
+  float: right;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+ 
+  cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* modal.js */
+.modal-background{
+  position: relative;
+  height: 1200px;
+  top: -90px;
+  position: relative;
+}
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.modal-main {
+  position:fixed;
+  background: white;
+  width: 50%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+#fullname {
+  padding: 16px;
+  margin: 16px auto;
+  width: 75%;
+}
+
+.form.row button {
+  padding: 4px;
+  margin: 0 8px;
+}
+
+.error {
+  color: red
+}
