@@ -22,7 +22,7 @@ export async function getHospitals() {
 
 export function addToWaitingList(payload) {
   return axios.post(
-    "http://localhost:3000/users/waitinglist",
+    "http://localhost:5000/users/waitinglist",
     payload
   );
 
